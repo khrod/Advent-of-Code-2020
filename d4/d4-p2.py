@@ -76,11 +76,10 @@ for passport in passports:
                 valid = False
         elif field_name == 'pid':
             # a nine-digit number, including leading zeroes.
-
+            if not (len(field_value) == 9 and field_value.isnumeric()):
+                valid = False
 
     if valid:
         c += 1
-
-    # break
 
 print(c)
